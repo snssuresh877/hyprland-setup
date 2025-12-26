@@ -45,7 +45,7 @@ After installation completes:
 
 sudo reboot
 
-##Why this script?
+## **Why this script?**
 
 This script aims to provide a complete, sane setup for Hyprland on Arch Linux. It installs:
 
