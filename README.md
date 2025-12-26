@@ -45,58 +45,101 @@ After installation completes:
 
 sudo reboot
 
-⚙️ What this script installs
+##Why this script?
 
-The script installs:
+This script aims to provide a complete, sane setup for Hyprland on Arch Linux. It installs:
 
-Wayland compositor: Hyprland
+✔ Core display and Wayland stack
 
-Display manager: SDDM
+Hyprland
 
-Terminal: kitty
+hyprlock, hypridle, hyprpaper
 
-Launcher: rofi
+xdg-desktop-portal-hyprland
 
-Power tools: tlp, thermald
+Polkit & authentication agents
 
-Clipboard tools: wl-clipboard
+✔ Power and laptop support
 
-AUR helper: yay
+TLP and thermald
 
-Popular utilities: neovim, fastfetch, btop, etc.
+Brightness and battery tools
 
-(See the script for the exact package list)
+Suspend/hibernate helpers
 
-📁 Configuration
+✔ User utilities
 
-After running the script, you can:
+Rofi launcher
 
-Modify your Hyprland config in ~/.config/hypr/
+Kitty terminal
 
-Add Waybar config in ~/.config/waybar/
+Clipboard tools
 
-Add launcher/power scripts in ~/.config/rofi/
+File manager and removable media support
 
-🧠 Notes
+✔ AUR helper
 
-Designed for Arch Linux (and derivatives)
+Installs yay for AUR package management
 
-Tested on AMD/Intel laptops
+✔ Optional extra tools
 
-Works with SDDM or manual start-hyprland login
+Media utilities, fonts, themes, and nice-to-have tools
 
-Uses yay for AUR packages
+🧾 System Requirements
+
+Arch Linux (or Arch-based distro)
+
+Internet access
+
+UEFI system recommended
+
+Optional: Windows dual-boot support (NTFS, polkit)
+
+🧩 Post-Installation
+
+After reboot, you can customize:
+
+Hyprland config: ~/.config/hypr/
+
+Waybar config: ~/.config/waybar/
+
+Rofi scripts: ~/.config/rofi/
+
+Power scripts: ~/.config/hypr/scripts/
+
+Example:
+
+~/.config/hypr/scripts/powermenu.sh
+
+📊 What’s Included
+Category	Installed
+Display	Hyprland, SDDM
+Terminal	kitty
+Launcher	rofi
+Power	TLP, thermald
+File system	Thunar, udiskie, ntfs-3g
+Audio	pipewire, pavucontrol
+Utilities	neovim, fastfetch, btop
+AUR helper	yay
+
+(See hyprland-setup.sh for the full exact list)
+
+🛠 Recommended Next Steps
+
+After setup, you can add:
+
+Waybar modules (system stats, updates, battery)
+
+Rofi menus (launcher, power menu)
+
+Keybindings (Hyprland conf)
+
+Dotfiles sync (GitHub or Gist)
 
 📚 Useful Links
 
-Hyprland official repo: https://github.com/hyprwm/Hyprland
- 
-GitHub
+Hyprland official GitHub: https://github.com/hyprwm/Hyprland
 
-Hyprland wiki: https://wiki.hypr.land/
- 
-Hyprland Wiki
+Hyprland wiki / guides: https://wiki.hypr.land/
 
-Awesome Hyprland tools: https://github.com/hyprland-community/awesome-hyprland
- 
-GitHub
+Awesome Hyprland community repo: https://github.com/hyprland-community/
