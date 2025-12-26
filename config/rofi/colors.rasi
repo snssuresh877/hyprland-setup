@@ -1,0 +1,8 @@
+
+* {
+    bg:        @background;
+    bg-alt:    @background;
+    fg:        @foreground;
+    accent:    @color4;
+    border:    @color8;
+}
