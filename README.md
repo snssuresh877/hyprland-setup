@@ -29,6 +29,74 @@ git clone https://github.com/snssuresh877/hyprland-setup.git
 cd hyprland-setup
 
 
-copy all config file to your .config
+2. Review the script
 
+Before running any installer script, always review it:
 
+nano hyprland-setup-essencial.sh
+
+3. Make it executable and run
+chmod +x hyprland-setup-essencial.sh
+./hyprland-setup-essencial.sh
+
+4. Reboot
+
+After installation completes:
+
+sudo reboot
+
+⚙️ What this script installs
+
+The script installs:
+
+Wayland compositor: Hyprland
+
+Display manager: SDDM
+
+Terminal: kitty
+
+Launcher: rofi
+
+Power tools: tlp, thermald
+
+Clipboard tools: wl-clipboard
+
+AUR helper: yay
+
+Popular utilities: neovim, fastfetch, btop, etc.
+
+(See the script for the exact package list)
+
+📁 Configuration
+
+After running the script, you can:
+
+Modify your Hyprland config in ~/.config/hypr/
+
+Add Waybar config in ~/.config/waybar/
+
+Add launcher/power scripts in ~/.config/rofi/
+
+🧠 Notes
+
+Designed for Arch Linux (and derivatives)
+
+Tested on AMD/Intel laptops
+
+Works with SDDM or manual start-hyprland login
+
+Uses yay for AUR packages
+
+📚 Useful Links
+
+Hyprland official repo: https://github.com/hyprwm/Hyprland
+ 
+GitHub
+
+Hyprland wiki: https://wiki.hypr.land/
+ 
+Hyprland Wiki
+
+Awesome Hyprland tools: https://github.com/hyprland-community/awesome-hyprland
+ 
+GitHub
