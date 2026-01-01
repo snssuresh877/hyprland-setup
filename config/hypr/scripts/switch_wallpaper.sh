@@ -1,38 +1,25 @@
 #!/usr/bin/env bash
 
-# ================================
-# Wallpaper Switcher (Hyprland)
-# + pywal + Waybar sync
-# ================================
+WALLPAPER_DIR="$HOME/Pictures/wallpapers"
+CACHE_DIR="$HOME/.cache/wal"
 
-set -e
-WALL_DIR="$HOME/Pictures/wallpapers"
-CACHE_FILE="$HOME/.cache/current_wallpaper"
-MONITOR="eDP-1"
+# Ensure daemon
+pgrep -x swww-daemon >/dev/null || swww-daemon &
+sleep 0.5
 
-# safety check
-[ ! -d "$WALL_DIR" ] && exit 1
+# Pick wallpaper
+WALLPAPER=$(ls "$WALLPAPER_DIR" | grep -Ei '\.(jpg|jpeg|png|webp)$' | shuf -n 1)
+[ -z "$WALLPAPER" ] && exit 1
+FULL_PATH="$WALLPAPER_DIR/$WALLPAPER"
 
-# pick random wallpaper (different from last)
-WALL=$(find "$WALL_DIR" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" -o -iname "*.webp" \) | shuf -n 1)
+# Set wallpaper
+swww img "$FULL_PATH" \
+  --transition-type grow \
+  --transition-duration 0.6 \
+  --transition-fps 60
 
-# fallback
-[ -z "$WALL" ] && exit 1
+# Generate colors (no terminal color pollution)
+wal -n -q -i "$FULL_PATH"
 
-# save current wallpaper
-echo "$WALL" >"$CACHE_FILE"
-
-# preload & set wallpaper (hyprpaper)
-hyprctl hyprpaper preload "$WALL"
-hyprctl hyprpaper wallpaper "$MONITOR,$WALL"
-hyprctl hyprpaper unload unused
-
-# generate pywal colors (no wallpaper setter)
-wal -i "$WALL" -n -q
-
-# reload waybar safely
-pkill waybar
-waybar &
-disown
-
-exit 0
+# Reload Waybar smoothly
+pkill -USR2 waybar
