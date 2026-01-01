@@ -141,6 +141,6 @@ yay -S --needed --noconfirm \
   visual-studio-code-bin
 
 echo
-echo "✅ Omarchy-style Hyprland installation complete!"
+echo "✅ Hyprland installation complete!"
 echo "➡️ Reboot recommended"
 echo "➡️ First Neovim launch: nvim (LazyVim will auto-install plugins)"
